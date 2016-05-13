@@ -201,6 +201,29 @@ namespace Emkay.S3
 	        response.WriteResponseStreamToFile(file);
         }
 
+        public Boolean FileExists(string bucketName, string key)
+        {
+            try
+            {
+                var request = new GetObjectRequest
+                {
+                    BucketName = bucketName,
+                    Key = key
+                };
+
+                var response = _amazonS3Client.GetObject(request);
+                if(response.ResponseStream != null)
+                {
+                    return true;
+                }
+                return false;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
         private static void EnsureSuccess(AmazonWebServiceResponse response)
         {
             if (!IsSuccessStatusCode((int)response.HttpStatusCode))

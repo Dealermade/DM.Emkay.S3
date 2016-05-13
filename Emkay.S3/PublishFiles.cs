@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using Microsoft.Build.Framework;
+using System.Text.RegularExpressions;
 
 namespace Emkay.S3
 {
@@ -26,6 +27,8 @@ namespace Emkay.S3
         [Required]
         public string DestinationFolder { get; set; }
 
+        public string UploadIfNotExists { get; set; }
+
         public override bool Execute()
         {
             Logger.LogMessage(MessageImportance.Normal,
@@ -42,7 +45,7 @@ namespace Emkay.S3
             {
                 Client.EnsureBucketExists(Bucket);
 
-                Publish(Client, SourceFiles, Bucket, DestinationFolder, PublicRead, TimeoutMilliseconds);
+                Publish(Client, SourceFiles, Bucket, DestinationFolder, PublicRead, TimeoutMilliseconds, UploadIfNotExists);
                 return true;
             }
             catch (Exception ex)
@@ -58,8 +61,9 @@ namespace Emkay.S3
             string bucket,
             string destinationFolder,
             bool publicRead,
-            int timeoutMilliseconds)
+            int timeoutMilliseconds, String uploadIfNotExists = null)
         {
+            uploadIfNotExists = uploadIfNotExists.Replace(".","\\.").Replace("*", ".*");
             foreach (var fileItem in sourceFiles.Where(taskItem => taskItem != null
                 && !string.IsNullOrEmpty(taskItem.GetMetadata("Identity"))))
             {
@@ -67,7 +71,15 @@ namespace Emkay.S3
                 var headers = MsBuildHelpers.GetCustomItemMetadata(fileItem);
 
                 Logger.LogMessage(MessageImportance.Normal, string.Format("Copying file {0}", info.FullName));
-                client.PutFile(bucket, CreateRelativePath(destinationFolder, info.Name), info.FullName, headers, publicRead, timeoutMilliseconds);
+                if(Regex.IsMatch(info.Name, uploadIfNotExists))
+                {
+                    if(!client.FileExists(bucket, CreateRelativePath(destinationFolder, info.Name)))
+                        client.PutFile(bucket, CreateRelativePath(destinationFolder, info.Name), info.FullName, headers, publicRead, timeoutMilliseconds);
+                } else
+                {
+                    client.PutFile(bucket, CreateRelativePath(destinationFolder, info.Name), info.FullName, headers, publicRead, timeoutMilliseconds);
+                }
+                
             }
         }
     }

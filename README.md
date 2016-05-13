@@ -35,12 +35,13 @@ Region is "us-east-1" by default, but any of the [AWS S3 region names](http://do
     	<Message Text="Bucket: $(S3_bucket)"/>
     	<Message Text="Destination folder: $(S3_subfolder)"/>
 
-    	<PublishFolder
+    	<PublishFiles
       		Key="$(S3_key)"
       		Secret="$(S3_secret)"
       		Region="$(S3_region)"
-      		SourceFolder="$(source)"
+      		SourceFiles="$(source)"
       		Bucket="$(S3_bucket)"
+      		UploadIfNotExists="*.nupkg"
       		DestinationFolder="$(S3_subfolder)" />
   	</Target>
 
@@ -54,11 +55,11 @@ PublishFolderWithHeaders example:
 		</Directories>
 	  </ItemGroup> 
 
-		<PublishFolderWithHeaders
+		<PublishFilesWithHeaders
 			Key="(Key)"
 			Secret="(Secret)"
 			Region="us-east-1"
-			SourceFolders="$(Directories)"
+			SourceFiles="$(Directories)"
 			Bucket="$(Bucket)"
 			DestinationFolder="$(DestinationFolder)" />
   	</Target>

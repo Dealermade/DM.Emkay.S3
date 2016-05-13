@@ -100,5 +100,7 @@ namespace Emkay.S3
 	    /// <param name="key">The key of the file to download.</param>
 	    /// <param name="file">The path for the file to be saved to.</param>
 	    void DownloadFile(string bucketName, string key, string file);
+
+        Boolean FileExists(string bucketName, string key);
     }
 }
