@@ -11,7 +11,7 @@
   <Import Project=".\Build\MSBuild.Community.Tasks.Targets"/>
   
   <ItemGroup>
-    <Solution Include=".\Emkay.S3.sln">
+    <Solution Include=".\DM.Emkay.S3.sln">
       <Properties>$(SolutionProperties)</Properties>
     </Solution>
   </ItemGroup>
@@ -32,7 +32,7 @@
                 Regex="AssemblyInformationalVersion\(\&quot;(\w+)\&quot;\)]"
                 ReplacementText="AssemblyInformationalVersion(&quot;$(hash)&quot;)]" />
 
-    <FileUpdate Files=".\Emkay.S3\Emkay.S3.csproj.nuspec"
+    <FileUpdate Files=".\DM.Emkay.S3\DM.Emkay.S3.csproj.nuspec"
                 Regex="&lt;version&gt;(.*)&lt;/version&gt;"
                 ReplacementText="&lt;version&gt;$(version)&lt;/version&gt;" />
   </Target>
@@ -55,9 +55,9 @@
     <Message Text="Cleaning old nuget artefacts"/>
     <Exec Command="del *.nupkg"/>
     <Message Text="Building project" />
-    <MSBuild Projects=".\Emkay.S3\Emkay.S3.csproj"/>
+    <MSBuild Projects=".\DM.Emkay.S3\DM.Emkay.S3.csproj"/>
     <Message Text="Running nuget ..." />
-    <Exec Command=".\Tools\NuGet\NuGet.exe pack .\Emkay.S3\Emkay.S3.csproj.nuspec -Prop Configuration=$(Configuration)"/>
+    <Exec Command=".\Tools\NuGet\NuGet.exe pack .\DM.Emkay.S3\DM.Emkay.S3.csproj.nuspec -Prop Configuration=$(Configuration)"/>
   </Target>
 
   <Target Name="publish" DependsOnTargets="package">
