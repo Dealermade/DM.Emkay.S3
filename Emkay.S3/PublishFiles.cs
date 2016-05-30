@@ -63,7 +63,8 @@ namespace Emkay.S3
             bool publicRead,
             int timeoutMilliseconds, String uploadIfNotExists = null)
         {
-            uploadIfNotExists = uploadIfNotExists.Replace(".","\\.").Replace("*", ".*");
+            if(uploadIfNotExists != null)
+                uploadIfNotExists = uploadIfNotExists.Replace(".","\\.").Replace("*", ".*");
             foreach (var fileItem in sourceFiles.Where(taskItem => taskItem != null
                 && !string.IsNullOrEmpty(taskItem.GetMetadata("Identity"))))
             {
@@ -71,7 +72,7 @@ namespace Emkay.S3
                 var headers = MsBuildHelpers.GetCustomItemMetadata(fileItem);
 
                 Logger.LogMessage(MessageImportance.Normal, string.Format("Copying file {0}", info.FullName));
-                if(Regex.IsMatch(info.Name, uploadIfNotExists))
+                if(uploadIfNotExists != null && Regex.IsMatch(info.Name, uploadIfNotExists))
                 {
                     if(!client.FileExists(bucket, CreateRelativePath(destinationFolder, info.Name)))
                         client.PutFile(bucket, CreateRelativePath(destinationFolder, info.Name), info.FullName, headers, publicRead, timeoutMilliseconds);
