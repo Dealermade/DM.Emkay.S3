@@ -5,7 +5,7 @@ using System.Linq;
 using Microsoft.Build.Framework;
 using System.Text.RegularExpressions;
 
-namespace Emkay.S3
+namespace DM.Emkay.S3
 {
     public class PublishFiles : PublishBase
     {

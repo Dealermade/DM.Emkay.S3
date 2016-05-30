@@ -5,7 +5,7 @@ using Amazon;
 using Amazon.S3;
 using NUnit.Framework;
 
-namespace Emkay.S3.Tests
+namespace DM.Emkay.S3.Tests
 {
     [TestFixture]
     public class S3ClientTests : S3TestsBase

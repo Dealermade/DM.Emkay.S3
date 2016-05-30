@@ -1,4 +1,4 @@
-﻿namespace Emkay.S3
+﻿namespace DM.Emkay.S3
 {
     public class S3ClientFactory : IS3ClientFactory
     {

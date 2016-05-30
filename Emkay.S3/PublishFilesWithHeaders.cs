@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using Microsoft.Build.Framework;
 
-namespace Emkay.S3
+namespace DM.Emkay.S3
 {
     [Obsolete("Use PublishFiles")]
     public class PublishFilesWithHeaders : PublishFiles 

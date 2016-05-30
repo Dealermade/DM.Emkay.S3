@@ -8,7 +8,7 @@ using Amazon.S3;
 using Amazon.S3.Model;
 using Amazon.S3.Util;
 
-namespace Emkay.S3
+namespace DM.Emkay.S3
 {
 	/// <summary>
 	/// Implementation of the S3 client interface.

@@ -5,7 +5,7 @@ using Microsoft.Build.Framework;
 using Microsoft.Build.Utilities;
 using NUnit.Framework;
 
-namespace Emkay.S3.Tests
+namespace DM.Emkay.S3.Tests
 {
     [TestFixture]
     public class PublishFilesTests : PublishTestsBase

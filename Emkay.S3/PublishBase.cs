@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Emkay.S3
+namespace DM.Emkay.S3
 {
     public abstract class PublishBase : S3Base
     {

@@ -2,7 +2,7 @@
 using Microsoft.Build.Framework;
 using Microsoft.Build.Utilities;
 
-namespace Emkay.S3
+namespace DM.Emkay.S3
 {
     class MsBuildTaskLogger : ITaskLogger
     {

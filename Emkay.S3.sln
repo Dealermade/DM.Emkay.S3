@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Emkay.S3", "Emkay.S3\Emkay.S3.csproj", "{90A69515-D43E-46BD-A400-5FC883157BF8}"
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DM.Emkay.S3", "Emkay.S3\DM.Emkay.S3.csproj", "{90A69515-D43E-46BD-A400-5FC883157BF8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Emkay.S3.Tests", "Emkay.S3.Tests\Emkay.S3.Tests.csproj", "{EAE9798C-41DC-445F-AA5D-4FE3AEBBC113}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DM.Emkay.S3.Tests", "Emkay.S3.Tests\DM.Emkay.S3.Tests.csproj", "{EAE9798C-41DC-445F-AA5D-4FE3AEBBC113}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{76EF6651-2B38-4653-AD6A-8F7DBFC62EB4}"
 	ProjectSection(SolutionItems) = preProject

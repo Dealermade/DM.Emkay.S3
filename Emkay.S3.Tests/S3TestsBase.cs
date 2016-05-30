@@ -1,6 +1,6 @@
 ﻿using Moq;
 
-namespace Emkay.S3.Tests
+namespace DM.Emkay.S3.Tests
 {
     public abstract class S3TestsBase
     {

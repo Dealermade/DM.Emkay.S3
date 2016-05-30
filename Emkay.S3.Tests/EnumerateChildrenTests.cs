@@ -1,6 +1,6 @@
 ﻿using NUnit.Framework;
 
-namespace Emkay.S3.Tests
+namespace DM.Emkay.S3.Tests
 {
     [TestFixture]
     public class EnumerateChildrenTests : S3TestsBase

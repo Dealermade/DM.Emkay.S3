@@ -2,7 +2,7 @@
 using System.Collections.Specialized;
 using Amazon.S3;
 
-namespace Emkay.S3
+namespace DM.Emkay.S3
 {
     /// <summary>
     /// Interface for accessing  basic S3 functionality.

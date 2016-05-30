@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.Build.Framework;
 
-namespace Emkay.S3
+namespace DM.Emkay.S3
 {
     public class EnumerateBuckets : S3Base
     {
