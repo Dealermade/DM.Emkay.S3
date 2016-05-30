@@ -83,7 +83,7 @@
     <Compile Include="S3TestsBase.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Emkay.S3\DM.Emkay.S3.csproj">
+    <ProjectReference Include="..\DM.Emkay.S3\DM.Emkay.S3.csproj">
       <Project>{90A69515-D43E-46BD-A400-5FC883157BF8}</Project>
       <Name>DM.Emkay.S3</Name>
     </ProjectReference>
