@@ -61,6 +61,7 @@
   </Target>
 
   <Target Name="publish" DependsOnTargets="package">
+    <Exec Command=".\Tools\NuGet\NuGet.exe push DM.Emkay*.nupkg"/>
   </Target>
   
 </Project>
