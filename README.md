@@ -1,4 +1,4 @@
-Emkay.S3
+DM.Emkay.S3
 ========
 
 This package contains a small wrapper for Amazon S3. It provides possibility to upload files, upload the content of a folder (including subfolders!), enumerate buckets, enumerate the content of a specific 'subfolder', delete buckets and delete files from specific subfolders.
@@ -6,20 +6,20 @@ All those are also available via MSBuild tasks which are also part of this packa
 
 ##Download
 
-The Emkay.S3 library is available on nuget.org via package name Emkay.S3.
+The DM.Emkay.S3 library is available on nuget.org via package name DM.Emkay.S3.
 
 To install it, run the following command in the Package Manager Console
 
-	PM> Install-Package Emkay.S3
+	PM> Install-Package DM.Emkay.S3
 
-More information about NuGet package avaliable at [https://nuget.org/packages/Emkay.S3](https://nuget.org/packages/Emkay.S3)
+More information about NuGet package avaliable at [https://nuget.org/packages/DM.Emkay.S3](https://nuget.org/packages/DM.Emkay.S3)
 
 ##Getting Started
 
-In order to use the tasks in your project, you need to import the Emkay.S3.Tasks.targets file. Maybe you need to adjust the paths to your needs.
+In order to use the tasks in your project, you need to import the DM.Emkay.S3.Tasks.targets file. Maybe you need to adjust the paths to your needs.
 
 	<PropertyGroup>
-    	<EmkayS3ClassLibrary>$(MSBuildStartupDirectory)\Lib\Emkay.S3.dll</EmkayS3ClassLibrary>
+    	<EmkayS3ClassLibrary>$(MSBuildStartupDirectory)\Lib\DM.Emkay.S3.dll</EmkayS3ClassLibrary>
   	</PropertyGroup>
 	<UsingTask AssemblyFile="$(EmkayS3ClassLibrary)" TaskName="PublishFolder" />
 	<UsingTask AssemblyFile="$(EmkayS3ClassLibrary)" TaskName="PublishFiles" />
