@@ -19,7 +19,7 @@ More information about NuGet package avaliable at [https://nuget.org/packages/DM
 In order to use the tasks in your project, you need to import the DM.Emkay.S3.Tasks.targets file. Maybe you need to adjust the paths to your needs.
 
 	<PropertyGroup>
-    	<EmkayS3ClassLibrary>$(MSBuildStartupDirectory)\Lib\DM.Emkay.S3.dll</EmkayS3ClassLibrary>
+    	<EmkayS3ClassLibrary>..\packages\DM.Emkay.S3.1.0.0.3\lib\net45\DM.Emkay.S3.dll</EmkayS3ClassLibrary>
   	</PropertyGroup>
 	<UsingTask AssemblyFile="$(EmkayS3ClassLibrary)" TaskName="PublishFolder" />
 	<UsingTask AssemblyFile="$(EmkayS3ClassLibrary)" TaskName="PublishFiles" />
