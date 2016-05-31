@@ -7,8 +7,8 @@
     <ProjectGuid>{EAE9798C-41DC-445F-AA5D-4FE3AEBBC113}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Emkay.S3.Tests</RootNamespace>
-    <AssemblyName>Emkay.S3.Tests</AssemblyName>
+    <RootNamespace>DM.Emkay.S3.Tests</RootNamespace>
+    <AssemblyName>DM.Emkay.S3.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <MSBuildCommunityTasksPath>$(SolutionDir)\Build</MSBuildCommunityTasksPath>

@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>DM.Emkay.S3</id>
-    <version>1.0.0.1</version>
+    <version>1.0.0.2</version>
     <authors>Martin Komischke,Jared Dobson</authors>
     <owners>Jared Dobson</owners>
     <licenseUrl>http://opensource.org/licenses/mit-license.php</licenseUrl>
@@ -11,15 +11,10 @@
     <description>MSBuild upload to S3 tasks.</description>
     <summary>Configure your MSBuild file (a csproj for example) to upload to AWS S3.</summary>
     <releaseNotes></releaseNotes>
-    <copyright>Copyright (c) 2012</copyright>
+    <copyright>Copyright (c) 2016</copyright>
     <tags>s3 amazons3 amazon aws</tags>
     <dependencies>
       <dependency id="AWSSDK.S3" version="3.1.6.2" />
     </dependencies>
   </metadata>
-  <files>
-    <file src="..\README.md" target="lib" />
-    <file src="bin\Release\DM.Emkay.S3.Tasks.targets" target="lib" /> 
-    <file src="bin\Release\DM.Emkay.S3.dll" target="lib\NET40" /> 
-  </files>
 </package>

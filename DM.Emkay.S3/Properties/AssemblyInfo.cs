@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Emkay.S3")]
+[assembly: AssemblyTitle("DM.Emkay.S3")]
 [assembly: AssemblyDescription("Publish files or entire folders (incl. subdirectories) to your S3 bucket.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyTrademark("")]
@@ -17,6 +17,6 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("50f7f397-1011-4adc-bdbc-f8a8f3220841")]
+[assembly: Guid("23e6b0ca-ffa9-4c60-ae5e-fe832efd6c3b")]
 
-[assembly: InternalsVisibleTo("Emkay.S3.Tests")]
+[assembly: InternalsVisibleTo("DM.Emkay.S3.Tests")]
