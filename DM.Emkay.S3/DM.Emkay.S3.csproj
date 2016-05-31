@@ -77,7 +77,7 @@
     <Compile Include="S3ClientFactory.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="DM.Emkay.S3.csproj.nuspec">
+    <None Include="DM.Emkay.S3.nuspec">
       <SubType>Designer</SubType>
     </None>
     <None Include="DM.Emkay.S3.Tasks.targets">

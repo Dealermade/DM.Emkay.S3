@@ -57,7 +57,7 @@
     <Message Text="Building project" />
     <MSBuild Projects=".\DM.Emkay.S3\DM.Emkay.S3.csproj"/>
     <Message Text="Running nuget ..." />
-    <Exec Command=".\Tools\NuGet\NuGet.exe pack .\DM.Emkay.S3\DM.Emkay.S3.csproj.nuspec -Prop Configuration=$(Configuration)"/>
+    <Exec Command=".\Tools\NuGet\NuGet.exe pack .\DM.Emkay.S3\DM.Emkay.S3.nuspec -Prop Configuration=$(Configuration)"/>
   </Target>
 
   <Target Name="publish" DependsOnTargets="package">
