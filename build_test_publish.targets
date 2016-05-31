@@ -61,7 +61,6 @@
   </Target>
 
   <Target Name="publish" DependsOnTargets="package">
-    <Exec Command=".\Tools\NuGet\NuGet.exe push Emkay*.nupkg $(nuget_api_key)"/>
   </Target>
   
 </Project>
