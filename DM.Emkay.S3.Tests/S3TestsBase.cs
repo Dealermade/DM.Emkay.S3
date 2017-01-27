@@ -11,10 +11,11 @@ namespace DM.Emkay.S3.Tests
         protected const string Secret = ""; // TODO edit your AWS S3 secret here
         protected const string Region = "us-east-1"; // TODO edit your AWS S3 region here
         protected const int RequestTimoutMilliseconds = 300000;
+        protected const int BufferSizeKilobytes = 8192;
 
         protected IS3Client Client
         {
-            get { return _client ?? (_client = ClientFactory.Create(Key, Secret, Region)); }
+            get { return _client ?? (_client = ClientFactory.Create(Key, Secret, Region, BufferSizeKilobytes)); }
         }
 
         class S3ClientFactoryMock : IS3ClientFactory
@@ -28,10 +29,10 @@ namespace DM.Emkay.S3.Tests
                 _secret = secret;
             }
 
-            public IS3Client Create(string key, string secret, string region)
+            public IS3Client Create(string key, string secret, string region, int bufferSizeKilobytes)
             {
                 if (!string.IsNullOrEmpty(_key) && !string.IsNullOrEmpty(_secret))
-                    return new S3Client(_key, _secret, region);
+                    return new S3Client(_key, _secret, region, bufferSizeKilobytes);
                 return new Mock<IS3Client>().Object;
             }
         }

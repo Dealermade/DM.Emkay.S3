@@ -11,16 +11,19 @@ namespace DM.Emkay.S3
         private IS3Client _client;
 
         public const int DefaultRequestTimeout = 300000; // 5 min default timeout
+        public const int DefaultBufferSizeKilobytes = 8192; // 8KB default buffer size
 
         public const string DefaultRegion = "us-east-1";
 
         protected S3Base(IS3ClientFactory s3ClientFactory,
                          int timeoutMilliseconds = DefaultRequestTimeout,
+                         int bufferSizeKilobytes = DefaultBufferSizeKilobytes,
                          ITaskLogger logger = null)
         {
             _s3ClientFactory = s3ClientFactory;
             _logger = logger;
             TimeoutMilliseconds = timeoutMilliseconds;
+            BufferSizeKilobytes = bufferSizeKilobytes;
         }
 
         public ITaskLogger Logger
@@ -42,9 +45,11 @@ namespace DM.Emkay.S3
         
         public int TimeoutMilliseconds { get; set; }
 
+        public int BufferSizeKilobytes { get; set; }
+
         public IS3Client Client
         {
-            get { return _client ?? (_client = _s3ClientFactory.Create(Key, Secret, Region ?? DefaultRegion)); }
+            get { return _client ?? (_client = _s3ClientFactory.Create(Key, Secret, Region ?? DefaultRegion, BufferSizeKilobytes)); }
         }
 
         public void Dispose()

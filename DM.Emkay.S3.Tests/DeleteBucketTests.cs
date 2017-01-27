@@ -13,7 +13,7 @@ namespace DM.Emkay.S3.Tests
         {
             Client.EnsureBucketExists(BucketName);
 
-            _delete = new DeleteBucket(ClientFactory, RequestTimoutMilliseconds, LoggerMock)
+            _delete = new DeleteBucket(ClientFactory, RequestTimoutMilliseconds, BufferSizeKilobytes, LoggerMock)
                         {
                             Bucket = BucketName
                         };

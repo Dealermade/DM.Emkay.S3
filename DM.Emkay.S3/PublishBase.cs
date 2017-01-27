@@ -5,15 +5,16 @@ namespace DM.Emkay.S3
     public abstract class PublishBase : S3Base
     {
         protected PublishBase()
-            : this(new S3ClientFactory(), DefaultRequestTimeout)
+            : this(new S3ClientFactory(), DefaultRequestTimeout, DefaultBufferSizeKilobytes)
         { }
 
         [Obsolete("Only for test purpose!")]
         internal PublishBase(IS3ClientFactory s3ClientFactory,
             int timeoutMilliseconds,
+            int bufferSizeKilobytes,
             bool publicRead = true,
             ITaskLogger logger = null)
-            : base(s3ClientFactory, timeoutMilliseconds, logger)
+            : base(s3ClientFactory, timeoutMilliseconds, bufferSizeKilobytes, logger)
         {
             PublicRead = publicRead;
         }

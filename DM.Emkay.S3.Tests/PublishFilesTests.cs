@@ -15,7 +15,7 @@ namespace DM.Emkay.S3.Tests
         [SetUp]
         public void SetUp()
         {
-            _publish = new PublishFiles(ClientFactory, RequestTimoutMilliseconds, true, LoggerMock)
+            _publish = new PublishFiles(ClientFactory, RequestTimoutMilliseconds, BufferSizeKilobytes, true, LoggerMock)
                         {
                             SourceFiles = EnumerateFiles(SourceFolder),
                             Bucket = Bucket,
@@ -26,7 +26,7 @@ namespace DM.Emkay.S3.Tests
         [TearDown]
         public void TearDown()
         {
-            var removeBucket = new DeleteBucket(ClientFactory, RequestTimoutMilliseconds, LoggerMock)
+            var removeBucket = new DeleteBucket(ClientFactory, RequestTimoutMilliseconds, BufferSizeKilobytes, LoggerMock)
                                 {
                                     Bucket = Bucket
                                 };

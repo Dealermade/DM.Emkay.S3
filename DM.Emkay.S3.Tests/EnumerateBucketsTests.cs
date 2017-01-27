@@ -10,7 +10,7 @@ namespace DM.Emkay.S3.Tests
         [SetUp]
         public void SetUp()
         {
-            _enumerate = new EnumerateBuckets(ClientFactory, RequestTimoutMilliseconds, LoggerMock);
+            _enumerate = new EnumerateBuckets(ClientFactory, RequestTimoutMilliseconds, BufferSizeKilobytes, LoggerMock);
         }
 
         [TearDown]

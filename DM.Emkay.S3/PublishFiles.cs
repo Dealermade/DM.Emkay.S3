@@ -16,9 +16,10 @@ namespace DM.Emkay.S3
         [Obsolete("Only for test purpose!")]
         internal PublishFiles(IS3ClientFactory s3ClientFactory,
             int timeoutMilliseconds = DefaultRequestTimeout,
+            int bufferSizeKilobytes = DefaultBufferSizeKilobytes,
             bool publicRead = true,
             ITaskLogger logger = null)
-            : base(s3ClientFactory, timeoutMilliseconds, publicRead, logger)
+            : base(s3ClientFactory, timeoutMilliseconds, bufferSizeKilobytes, publicRead, logger)
         { }
 
         [Required]

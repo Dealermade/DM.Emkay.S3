@@ -6,12 +6,12 @@ namespace DM.Emkay.S3
     public class DeleteChildren : S3Base
     {
         public DeleteChildren()
-            : this(new S3ClientFactory(), DefaultRequestTimeout, null)
+            : this(new S3ClientFactory(), DefaultRequestTimeout, DefaultBufferSizeKilobytes, null)
         { }
 
         [Obsolete("Only for test purpose!")]
-        internal DeleteChildren(IS3ClientFactory s3ClientFactory, int timeoutMilliseconds, ITaskLogger logger)
-            : base(s3ClientFactory, timeoutMilliseconds, logger)
+        internal DeleteChildren(IS3ClientFactory s3ClientFactory, int timeoutMilliseconds, int bufferSizeKilobytes, ITaskLogger logger)
+            : base(s3ClientFactory, timeoutMilliseconds, bufferSizeKilobytes, logger)
         { }
 
         [Required]
