@@ -52,6 +52,7 @@ namespace DM.Emkay.S3
             {
                 Logger.LogMessage(MessageImportance.High,
                                   string.Format("Publishing folder has failed because of {0}", ex.Message));
+                Logger.LogErrorFromException(ex);
                 return false;
             }
         }
