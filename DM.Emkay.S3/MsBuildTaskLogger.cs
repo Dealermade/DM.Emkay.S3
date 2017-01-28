@@ -28,7 +28,7 @@ namespace DM.Emkay.S3
 
         public void LogErrorFromException(Exception exception)
         {
-            _log.LogErrorFromException(exception);
+            _log.LogErrorFromException(exception, true, true, null);
         }
     }
 }

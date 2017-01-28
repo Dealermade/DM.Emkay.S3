@@ -12,8 +12,9 @@ namespace DM.Emkay.S3
         [Obsolete("Only for test purpose!")]
         internal EnumerateBuckets(IS3ClientFactory s3ClientFactory,
             int timeoutMilliseconds = DefaultRequestTimeout,
+            int bufferSizeKilobytes = DefaultBufferSizeKilobytes,
             ITaskLogger logger = null)
-            : base(s3ClientFactory, timeoutMilliseconds, logger)
+            : base(s3ClientFactory, timeoutMilliseconds, bufferSizeKilobytes, logger)
         { }
 
         public string[] Buckets { get; private set; }

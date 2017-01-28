@@ -14,7 +14,7 @@ namespace DM.Emkay.S3.Tests
         [SetUp]
         public void SetUp()
         {
-            var publish = new PublishFiles(ClientFactory, RequestTimoutMilliseconds, true, LoggerMock)
+            var publish = new PublishFiles(ClientFactory, RequestTimoutMilliseconds, BufferSizeKilobytes, true, LoggerMock)
                             {
                                 SourceFiles = new ITaskItem[] { new TaskItem(TestFilePath) },
                                 Bucket = Bucket,
@@ -23,7 +23,7 @@ namespace DM.Emkay.S3.Tests
 
             Assert.IsTrue(publish.Execute());
 
-            _delete = new DeleteChildren(ClientFactory, RequestTimoutMilliseconds, LoggerMock)
+            _delete = new DeleteChildren(ClientFactory, RequestTimoutMilliseconds, BufferSizeKilobytes, LoggerMock)
                         {
                             Bucket = Bucket,
                             Children = new[] { string.Format("{0}/{1}", DestinationFolder, TestFileName) }
@@ -33,7 +33,7 @@ namespace DM.Emkay.S3.Tests
         [TearDown]
         public void TearDown()
         {
-            var removeBucket = new DeleteBucket(ClientFactory, RequestTimoutMilliseconds, LoggerMock)
+            var removeBucket = new DeleteBucket(ClientFactory, RequestTimoutMilliseconds, BufferSizeKilobytes, LoggerMock)
                 {
                     Bucket = Bucket
                 };
