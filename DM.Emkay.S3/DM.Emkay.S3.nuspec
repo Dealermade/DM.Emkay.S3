@@ -14,7 +14,8 @@
     <copyright>Copyright (c) 2016</copyright>
     <tags>s3 amazons3 amazon aws</tags>
     <dependencies>
-      <dependency id="AWSSDK.S3" version="3.1.6.2" />
+      <dependency id="AWSSDK.Core" version="3.3.10.2" />
+      <dependency id="AWSSDK.S3" version="3.3.5.10" />
     </dependencies>
   </metadata>
   <files>
